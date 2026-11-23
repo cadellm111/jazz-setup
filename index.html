@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jazz GD3 — Track suspension setup guide</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --line:#30363d; --ink:#e6edf3; --dim:#9aa4b0;
+    --accent:#4ccb8a; --warn:#f0b84a; --bad:#ff858a; --blue:#79c0ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+  .wrap{max-width:880px;margin:0 auto;padding:26px 18px 70px}
+  h1{font-size:1.5rem;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--dim);margin:0 0 22px;font-size:.95rem}
+  h2{font-size:1.12rem;margin:34px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  h3{font-size:.98rem;margin:20px 0 6px;color:var(--ink)}
+  p{margin:0 0 11px}
+  ul,ol{margin:0 0 12px;padding-left:22px}
+  li{margin-bottom:6px}
+  small{color:var(--dim)}
+  code{background:#1f2630;padding:1px 5px;border-radius:4px;font-size:.88em;
+       font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:.93rem}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+       padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:1px}
+  .t-good{background:#12371f;color:var(--accent);border:1px solid #1d744a}
+  .t-warn{background:#3a2f10;color:var(--warn);border:1px solid #7a5c1e}
+  .t-bad{background:#3a1618;color:var(--bad);border:1px solid #7a2a2e}
+  .t-info{background:#132a3f;color:var(--blue);border:1px solid #1f4b78}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .k{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+  .k div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .k b{display:block;font-size:.78rem;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+  .k span{font-size:1.15rem;font-variant-numeric:tabular-nums}
+  .check{list-style:none;padding-left:0}
+  .check li{padding-left:26px;position:relative;margin-bottom:9px}
+  .check li:before{content:"☐";position:absolute;left:2px;color:var(--dim)}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--dim);font-size:.85rem}
+  @media print{
+    body{background:#fff;color:#111} .card,.k div,table{background:#fff;border-color:#bbb}
+    th,td{border-color:#ccc} .sub,small{color:#555} a{color:#0645ad}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Jazz GD3 — track suspension setup</h1>
+<p class="sub">Built for Cadell's GD3 1.5 manual, Winton / Sandown. Current hardware: MaXpeedingRods T6 24-way, camber bolts, +20 mm rear riser, 195/50R15 Hankook R-S4.
+Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
+
+<div class="card">
+  <span class="tag t-info">Verified spec</span><b>What's on the car right now</b>
+  <table>
+    <tr><th>Item</th><th>Front</th><th>Rear</th></tr>
+    <tr><td>Spring rate</td><td class="num">5 kg/mm</td><td class="num">5 kg/mm</td></tr>
+    <tr><td>Spring ID</td><td class="num">70.5 mm</td><td class="num">62 mm</td></tr>
+    <tr><td>Free length</td><td class="num">200 mm</td><td class="num">180 mm</td></tr>
+    <tr><td>Damping</td><td colspan="2">24-level <b>rebound only</b> — compression is fixed</td></tr>
+    <tr><td>Adjustment</td><td colspan="2">Height 25–75 mm, preload recommended 7–10 mm, no camber adjustment on the body</td></tr>
+  </table>
+  <small>Source: <a href="https://au.maxpeedingrods.com/product/t6-series-coilover-24-ways-damper-adjustable-for-honda-jazz-gd1-gd3-2002-2008.html">MaXpeedingRods T6 GD1/GD3 product page</a>.</small>
+</div>
+
+<h2>1. Why it hops — the four real causes, in order</h2>
+<p>Hopping through a corner on a torsion-beam FWD is almost never a spring-rate problem. Check these in this order, because they cost nothing and each one produces the same symptom.</p>
+
+<div class="card">
+<span class="tag t-bad">Check first</span><b>You're riding the bump stops</b>
+<p>At 25–75 mm of drop, the front strut is into its bump stop under cornering load. Once the stop is engaged the effective rate goes vertical — the tyre skips instead of following the road, and the car feels like it's hopping on its outside front. Diagnostic: <b>cable-tie test</b> — a zip tie around the damper shaft pushed down to the body; drive; measure how far up the shaft it's been pushed. If it's within 5 mm of the bump stop, that's your answer. Softer damping will <i>not</i> fix it, which is the giveaway.</p>
+</div>
+
+<div class="card">
+<span class="tag t-warn">Check second</span><b>No droop — the inside wheel has nothing to do</b>
+<p>If ride height is set by winding the perch down, you get bump travel at the expense of droop. The inside rear then lifts the tyre off the track, the beam axle unloads, and the car snaps and hops. You want roughly <b>65–70% of the total stroke available in bump, 30–35% in droop</b> — and never less than about 40 mm of droop at the front.</p>
+</div>
+
+<div class="card">
+<span class="tag t-warn">Check third</span><b>Rebound set too high</b>
+<p>Your dampers adjust <b>rebound only</b>. Too much rebound stops the spring extending between bumps, so the car packs down onto the bump stops over a sequence — the classic "jacking down" hop, and it feels exactly like a car with no suspension. Each click you add is a click you can't take out of compression, because there isn't one.</p>
+</div>
+
+<div class="card">
+<span class="tag t-warn">Check fourth</span><b>Tyres and alignment</b>
+<p>R-S4s at road pressures (36+ psi) on a 1,050 kg car will skip and feel vague. Start <b>28 psi cold</b> all round and aim for <b>32–34 psi hot</b>; bleed after each session. Zero front toe with -4° camber is stable; toe-out at the rear is not, and the GD3 rear beam has no adjustment until you fit shims.</p>
+</div>
+
+<h2>2. The target spec</h2>
+<p>Honed Developments run a GD3 at Winton and publish their recipe. This is the reference, and it's what the rest of this page is engineered around.</p>
+
+<table>
+  <tr><th>Geometry</th><th>Target</th></tr>
+  <tr><td>Ride height (hub to apex of guard)</td><td class="num">275–290 mm</td></tr>
+  <tr><td>Front camber</td><td class="num">−3.5° to −4.5°</td></tr>
+  <tr><td>Front caster</td><td class="num">+2.0° to +2.5°</td></tr>
+  <tr><td>Front toe</td><td class="num">0°</td></tr>
+  <tr><td>Rear camber</td><td class="num">−2.0° to −2.5°</td></tr>
+  <tr><td>Rear toe</td><td class="num">+2 mm in → 0°</td></tr>
+  <tr><td>Springs</td><td class="num">6 kg/mm front, 8–9 kg/mm rear</td></tr>
+  <tr><td>Anti-roll bars</td><td>Stock front, 16 mm rear</td></tr>
+</table>
+<small>Source: <a href="https://honeddevelopments.com/honda-fit-gd3-suspension-recipe/">Honed Developments — GD3 suspension recipe</a>.</small>
+
+<h2>3. Why 6 / 9 and not 5 / 5</h2>
+<p>Spring rate at the spring is not what the car feels — <b>wheel rate</b> is, and it's the spring rate multiplied by the motion ratio squared. The rear spring on the beam axle acts well inboard, so it needs a much bigger number to do the same work.</p>
+
+<table>
+  <tr><th>Setup</th><th>Wheel rate</th><th>Ride frequency</th></tr>
+  <tr><td>Now: 5 kg front (MR ~0.95)</td><td class="num">4.51 kg/mm</td><td class="num">1.86 Hz</td></tr>
+  <tr><td>Target: 6 kg front (MR ~0.95)</td><td class="num">5.42 kg/mm</td><td class="num">2.03 Hz</td></tr>
+  <tr><td>Now: 5 kg rear (MR ~0.70)</td><td class="num">2.45 kg/mm</td><td class="num">1.75 Hz</td></tr>
+  <tr><td>Target: 8 kg rear (MR ~0.70)</td><td class="num">3.92 kg/mm</td><td class="num">2.21 Hz</td></tr>
+  <tr><td>Target: 9 kg rear (MR ~0.70)</td><td class="num">4.41 kg/mm</td><td class="num">2.34 Hz</td></tr>
+</table>
+<p>Assumes ~1,050 kg with a 62/38 static split (≈326 kg per front corner, ≈200 kg per rear). <b>Measure your corner weights and motion ratios</b> — the ratios are estimates until you do, and every number above scales with them.</p>
+<p><span class="tag t-info">The point</span>Stock is 5/5, which leaves the rear at 1.75 Hz — <i>softer</i> than the front. On a beam axle that means the rear lags every input, the beam steers itself, and the car pushes then snaps. Honed's 6/9 puts the rear <b>above</b> the front (2.0 Hz front / 2.2–2.3 Hz rear), which is what makes a torsion-beam car rotate predictably.</p>
+
+<h2>4. Measure first — the order that matters</h2>
+<ol>
+  <li><b>Ride height.</b> Flat ground, tyre pressures set, half a tank. Measure hub centre to the apex of the guard. Record all four corners. Target 275–290 mm.</li>
+  <li><b>Motion ratio.</b> Jack one corner, remove the wheel, put a zip tie on the shaft, refit the wheel, compress the suspension exactly 20 mm at the wheel with a jack and measure shaft movement. <code>MR = shaft travel ÷ wheel travel</code>. Do front and rear — you only need to do this once and it corrects every calculation on this page.</li>
+  <li><b>Droop.</b> With the car on stands under the chassis (suspension hanging), measure from the bump stop to the body seat on the shaft. That's your droop travel. Target <b>30–35% of total stroke</b>, minimum ~40 mm at the front.</li>
+  <li><b>Bump stop clearance.</b> Zip-tie on the shaft at the body, drive a hard lap, measure. You want to end up <b>10–15 mm off the stop</b> — close enough to use it over the kerbs, far enough that it isn't carrying the car.</li>
+  <li><b>Corner weights.</b> Only after heights are set. Cross-weight to 50% ± 0.5% if you can, or at minimum get the diagonals within 10 kg.</li>
+  <li><b>Alignment last.</b> Ride height changes camber and toe; aligning before the height is final wastes the $150.</li>
+</ol>
+
+<h2>5. Bump stops — cut, don't delete</h2>
+<p>The MPR stops are long, because they're sized for a road car at stock height. At 275–290 mm ride height you're losing real travel to them.</p>
+<ul>
+  <li><b>Measure the stop first:</b> length, and the shaft diameter it sits on.</li>
+  <li><b>Cut in 10 mm steps</b> from the bottom (the soft end), never the top. Cut square with a fresh blade; a ragged cut will chew the shaft seal.</li>
+  <li><b>Re-run the cable-tie test after each cut.</b> Target: stop contact only on the biggest kerbs, not mid-corner.</li>
+  <li><b>Never remove them entirely.</b> They also protect the damper from bottoming internally, and on a MacPherson strut the stop is what stops the spring going coil-bound.</li>
+  <li><b>Add a helper/assist spring instead</b> if you find yourself cutting more than ~25 mm — a tender spring keeps the main spring located at full droop and gives a progressive ramp.</li>
+</ul>
+<p><span class="tag t-warn">Watch</span>Cutting the stop <b>increases</b> suspension travel, which lowers the car further at rest if you then wind the perch down to compensate. Trim stops and set height together, not sequentially — otherwise you chase your tail.</p>
+
+<h2>6. Preload and droop — the argument that actually matters</h2>
+<p>MPR advise 7–10 mm of preload. That's a sensible starting point, and it's not the same thing as "preload stiffens the spring" — it doesn't. What preload does is hold the spring against its seats at full droop so it can't rattle or unseat, and it sets how much of the damper's stroke is above and below static ride height.</p>
+<div class="card">
+<span class="tag t-good">Method</span>
+<p><b>1.</b> Set the perch so the spring has 7 mm of preload with the car in the air and the spring seated.<br>
+<b>2.</b> Drop the car, bounce it, measure ride height.<br>
+<b>3.</b> Adjust <i>height only</i> via the lower mount / body, not by adding preload — adding preload to change height is how people end up with no droop.</p>
+<p>If you need more droop and you're already at the top of the thread, the answer is a <b>shorter spring</b>, not more preload.</p>
+</div>
+
+<h2>7. Damper settings — 24 clicks of rebound</h2>
+<p>You have rebound only, so tune in this order and change one thing at a time.</p>
+<table>
+  <tr><th>Stage</th><th>Front</th><th>Rear</th><th>What you're looking for</th></tr>
+  <tr><td>Baseline (new springs)</td><td class="num">8 clicks</td><td class="num">10 clicks</td><td>From full soft, counting in</td></tr>
+  <tr><td>If it hops on kerbs</td><td>−2 front</td><td>−2 rear</td><td>Less jacking-down; tyre follows the surface</td></tr>
+  <tr><td>If it floats / wallows after a bump</td><td>+2</td><td>+2</td><td>Body settles in one movement, no second bounce</td></tr>
+  <tr><td>If the rear steps out on entry</td><td>—</td><td>−2 rear only</td><td>Rear follows the road instead of skipping</td></tr>
+</table>
+<p><span class="tag t-bad">Trap</span>Adding rebound to cure understeer is the most common mistake on rebound-only dampers. It feels sharper for one lap and then the car packs down and hops. If you're past ~14 clicks at either end on a 1,050 kg car, you're masking a travel problem, not damping one.</p>
+
+<h2>8. Alignment and the parts that make it possible</h2>
+<p>The GD3 front has no camber adjustment from the factory and the rear beam has none at all — so the numbers in section 2 need hardware.</p>
+<table>
+  <tr><th>Part</th><th>Why</th><th>Link</th></tr>
+  <tr><td>Honed GD3 strut top</td><td>Adds approx −1° camber / +1° caster; the rest comes from camber bolts</td><td><a href="https://honeddevelopments.com/product/gd3-strut-top/">honeddevelopments.com</a></td></tr>
+  <tr><td>Rear alignment shim kit</td><td>The only way to set rear camber and toe on a beam axle</td><td><a href="https://honeddevelopments.com/product/jazz-fit-rear-alignment-kit/">honeddevelopments.com</a></td></tr>
+  <tr><td>16 mm rear bar</td><td>Rotation control on a torsion beam — this is the balance tool, not the front bar</td><td><a href="https://honeddevelopments.com/product/jazz-advanced-handling-package/">Honed handling package</a></td></tr>
+  <tr><td>Camber bolts</td><td>Already fitted — confirm they're at max before paying for alignment</td><td>—</td></tr>
+</table>
+
+<h2>9. Springs — the right part numbers for your kit</h2>
+<p>Your front and rear springs are <b>different internal diameters</b>, so they cannot be bought as one set of four. Front is 70.5 mm, rear is 62 mm.</p>
+<table>
+  <tr><th>End</th><th>Target</th><th>Product</th><th>Price</th></tr>
+  <tr><td>Rear</td><td>8 kg/mm, 62 mm × 180 mm</td><td><a href="https://justjap.com/products/bc-racing-replacement-linear-spring-62-180-8kg">BC Racing 62-180-8KG — Just Jap</a></td><td class="num">A$105 ea, in stock</td></tr>
+  <tr><td>Front</td><td>6 kg/mm, 70 mm × 203 mm</td><td><a href="https://www.springrates.com/products/swift-springs-metric-coilover-springs-id-70mm-8in-length">Swift 70 mm × 8″ (203 mm), 4–20 kgf/mm</a></td><td class="num">US$202.30/pair</td></tr>
+  <tr><td>Front alt.</td><td>6 kg/mm, 70 mm × 200 mm (exact)</td><td><a href="https://www.streetfx.com.au/teinsb060-01200">Tein Replacement Straight Spring — StreetFX</a></td><td class="num">~A$410/pair, special order</td></tr>
+  <tr><td>Rear alt.</td><td>8 kg/mm, 62 mm × 180 mm</td><td><a href="https://mx5mania.com.au/products/yellow-speed-ysr-replacement-springs">Yellow Speed YSR 62 mm — MX5 Mania</a></td><td class="num">A$195/pair, pre-order</td></tr>
+</table>
+<p>If you go to 9 kg rear instead of 8, the same SKU family covers it — search the Just Jap collection for <code>62-180-9kg</code>.</p>
+
+<h2>10. Test day — Winton</h2>
+<ol>
+  <li><b>Baseline session.</b> Pressures 28 cold, dampers 8F/10R, note hot pressures and the highest shaft mark from the zip tie.</li>
+  <li><b>Bleed to 32–34 psi hot</b> and re-set. Write it down — that's your starting pressure for every future day at this track in this weather.</li>
+  <li><b>Fix travel before damping.</b> If the tie is against the stop, raise the car or cut the stop. Damping changes only after the shaft mark sits 10–15 mm clear.</li>
+  <li><b>Then tune one end.</b> Two clicks at a time, one session each, and log it. Two changes at once and you learn nothing.</li>
+  <li><b>Alignment check</b> after the car has settled on the new springs — expect camber to shift as ride height changes.</li>
+</ol>
+
+<h2>11. Check sheet</h2>
+<ul class="check">
+  <li>Ride height recorded all four corners (target 275–290 mm)</li>
+  <li>Motion ratio measured front and rear</li>
+  <li>Droop measured — at least 40 mm front, 30–35% of stroke</li>
+  <li>Bump stop clearance verified by cable-tie test</li>
+  <li>Stops trimmed in 10 mm steps if needed, re-tested</li>
+  <li>Preload 7 mm, height set by the body, not the perch</li>
+  <li>Springs changed: 6 kg front (70 mm), 8–9 kg rear (62 mm)</li>
+  <li>Corner weights / cross weight within 10 kg</li>
+  <li>Alignment: −3.5 to −4.5° front camber, +2 to +2.5° caster, 0 toe; rear −2 to −2.5°, toe in 2 mm → 0</li>
+  <li>16 mm rear bar fitted, stock front bar retained</li>
+  <li>Tyre pressures logged cold and hot</li>
+  <li>Damper settings logged per session</li>
+</ul>
+
+<footer>
+  <p><b>Sources:</b>
+    <a href="https://honeddevelopments.com/honda-fit-gd3-suspension-recipe/">Honed Developments GD3 suspension recipe</a> ·
+    <a href="https://au.maxpeedingrods.com/product/t6-series-coilover-24-ways-damper-adjustable-for-honda-jazz-gd1-gd3-2002-2008.html">MaXpeedingRods T6 GD1/GD3 specs</a> ·
+    <a href="https://coilovers.com/blogs/guides/bump-stops-lowered-cars">Bump stops on lowered cars</a> ·
+    <a href="https://shop.gutentight.racing/blogs/news/coilover-setup-guide-your-coilovers-arent-set-up-right">Coilover setup: travel and preload</a>
+  </p>
+  <p>Corner masses and motion ratios are estimates (~1,050 kg, 62/38, MR 0.95 front / 0.70 rear). Measure them and every figure on this page scales with your car. Prepared for Cadell — 23 Nov 2026.</p>
+</footer>
+
+</div>
+</body>
+</html>
