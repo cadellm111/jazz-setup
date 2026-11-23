@@ -93,7 +93,69 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 <p>R-S4s at road pressures (36+ psi) on a 1,050 kg car will skip and feel vague. Start <b>28 psi cold</b> all round and aim for <b>32–34 psi hot</b>; bleed after each session. Zero front toe with -4° camber is stable; toe-out at the rear is not, and the GD3 rear beam has no adjustment until you fit shims.</p>
 </div>
 
-<h2>2. The target spec</h2>
+<h2 id="as-it-stands">2. Your car as it stands — 23 Nov 2026</h2>
+<p>Recorded from the photos and the work done so far. This is the starting point every recommendation
+below is measured from.</p>
+
+<div class="card">
+<span class="tag t-bad">The actual problem</span><b>Nose-down, front travel-starved</b>
+<p>The car sits visibly lower at the front than the rear — the front arch gap is a sliver. At that height
+the front strut is into its bump stop at <i>static</i> ride height, so under cornering load it has nowhere
+to go: the tyre skips, the car hops, and it feels unstable at the limit. Softer damping won't touch it,
+because the spring has stopped being the spring.</p>
+</div>
+
+<table>
+  <tr><th>What's been done</th><th>What it means</th></tr>
+  <tr>
+    <td>Rear riser / spacer <b>cut</b> at the lower cup</td>
+    <td>The rear has been lowered to chase a front that was already too low. Both ends are now short of
+    travel. The cut face also has to be dead square — an off-angle cut loads the spring off-centre and
+    leaves the seat held by the collar alone.</td>
+  </tr>
+  <tr>
+    <td>Perch collar <b>wound fully down</b></td>
+    <td>Zero preload against the 7–10 mm the manufacturer specifies. At full droop the spring can lose
+    contact with its seats: that's the clunk and the vague front end, and the spring is no longer located
+    at the top of its travel.</td>
+  </tr>
+  <tr>
+    <td>Springs still <b>5 kg/mm</b> at both ends</td>
+    <td>Rear wheel rate 1.75 Hz against the front's 1.86 Hz — the rear is softer than the front, which on
+    a torsion beam is the push-then-snap signature.</td>
+  </tr>
+  <tr>
+    <td>Front ride height visually <b>~250–260 mm</b></td>
+    <td>Below the 275–285 mm target band. Raising it is the single biggest fix available, and it costs
+    nothing but a spanner.</td>
+  </tr>
+</table>
+
+<div class="card">
+<span class="tag t-good">Fix order</span><b>Do these in this sequence</b>
+<ol>
+  <li><b>Tape measure all four corners</b> — hub centre to arch apex, flat ground, half a tank. Write them in the table below; every number after this depends on them.</li>
+  <li><b>Raise the front 20–25 mm</b> using the lower mount, not the perch. Leave the preload question until after.</li>
+  <li><b>Set 7 mm preload</b> both ends: spring hand-tight to the seats, then a quarter turn past contact.</li>
+  <li><b>Cable-tie test the front shafts</b> — one hard lap, then read how far up the tie has been pushed. Target 10–15 mm of clearance from the stop in normal cornering.</li>
+  <li><b>Re-check camber</b> after the height change: 25 mm up costs roughly 0.5–0.7° of negative camber, and you're chasing −3.5°.</li>
+</ol>
+<p>Expect it to look and feel worse for one session — taller, more roll — and then the hopping stops and
+the car holds a line. That's the honest trade.</p>
+</div>
+
+<h3>Ride height record</h3>
+<table>
+  <tr><th>Corner</th><th>Measured (mm)</th><th>Target</th><th>Δ</th></tr>
+  <tr><td>Front left</td><td>—</td><td class="num">275–285</td><td>—</td></tr>
+  <tr><td>Front right</td><td>—</td><td class="num">275–285</td><td>—</td></tr>
+  <tr><td>Rear left</td><td>—</td><td class="num">280–290</td><td>—</td></tr>
+  <tr><td>Rear right</td><td>—</td><td class="num">280–290</td><td>—</td></tr>
+</table>
+<p><small>Left and right within a corner should match within 5 mm before corner weighting. Fill this in and
+the perch turns become arithmetic rather than guesswork.</small></p>
+
+<h2>3. The target spec</h2>
 <p>Honed Developments run a GD3 at Winton and publish their recipe. This is the reference, and it's what the rest of this page is engineered around.</p>
 
 <table>
@@ -109,7 +171,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 </table>
 <small>Source: <a href="https://honeddevelopments.com/honda-fit-gd3-suspension-recipe/">Honed Developments — GD3 suspension recipe</a>.</small>
 
-<h2>3. Why 6 / 9 and not 5 / 5</h2>
+<h2>4. Why 6 / 9 and not 5 / 5</h2>
 <p>Spring rate at the spring is not what the car feels — <b>wheel rate</b> is, and it's the spring rate multiplied by the motion ratio squared. The rear spring on the beam axle acts well inboard, so it needs a much bigger number to do the same work.</p>
 
 <table>
@@ -123,7 +185,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 <p>Assumes ~1,050 kg with a 62/38 static split (≈326 kg per front corner, ≈200 kg per rear). <b>Measure your corner weights and motion ratios</b> — the ratios are estimates until you do, and every number above scales with them.</p>
 <p><span class="tag t-info">The point</span>Stock is 5/5, which leaves the rear at 1.75 Hz — <i>softer</i> than the front. On a beam axle that means the rear lags every input, the beam steers itself, and the car pushes then snaps. Honed's 6/9 puts the rear <b>above</b> the front (2.0 Hz front / 2.2–2.3 Hz rear), which is what makes a torsion-beam car rotate predictably.</p>
 
-<h2>4. Measure first — the order that matters</h2>
+<h2>5. Measure first — the order that matters</h2>
 <ol>
   <li><b>Ride height.</b> Flat ground, tyre pressures set, half a tank. Measure hub centre to the apex of the guard. Record all four corners. Target 275–290 mm.</li>
   <li><b>Motion ratio.</b> Jack one corner, remove the wheel, put a zip tie on the shaft, refit the wheel, compress the suspension exactly 20 mm at the wheel with a jack and measure shaft movement. <code>MR = shaft travel ÷ wheel travel</code>. Do front and rear — you only need to do this once and it corrects every calculation on this page.</li>
@@ -133,7 +195,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
   <li><b>Alignment last.</b> Ride height changes camber and toe; aligning before the height is final wastes the $150.</li>
 </ol>
 
-<h2>5. Bump stops — cut, don't delete</h2>
+<h2>6. Bump stops — cut, don't delete</h2>
 <p>The MPR stops are long, because they're sized for a road car at stock height. At 275–290 mm ride height you're losing real travel to them.</p>
 <ul>
   <li><b>Measure the stop first:</b> length, and the shaft diameter it sits on.</li>
@@ -144,7 +206,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 </ul>
 <p><span class="tag t-warn">Watch</span>Cutting the stop <b>increases</b> suspension travel, which lowers the car further at rest if you then wind the perch down to compensate. Trim stops and set height together, not sequentially — otherwise you chase your tail.</p>
 
-<h2>6. Preload and droop — the argument that actually matters</h2>
+<h2>7. Preload and droop — the argument that actually matters</h2>
 <p>MPR advise 7–10 mm of preload. That's a sensible starting point, and it's not the same thing as "preload stiffens the spring" — it doesn't. What preload does is hold the spring against its seats at full droop so it can't rattle or unseat, and it sets how much of the damper's stroke is above and below static ride height.</p>
 <div class="card">
 <span class="tag t-good">Method</span>
@@ -154,7 +216,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 <p>If you need more droop and you're already at the top of the thread, the answer is a <b>shorter spring</b>, not more preload.</p>
 </div>
 
-<h2>7. Damper settings — 24 clicks of rebound</h2>
+<h2>8. Damper settings — 24 clicks of rebound</h2>
 <p>You have rebound only, so tune in this order and change one thing at a time.</p>
 <table>
   <tr><th>Stage</th><th>Front</th><th>Rear</th><th>What you're looking for</th></tr>
@@ -165,7 +227,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 </table>
 <p><span class="tag t-bad">Trap</span>Adding rebound to cure understeer is the most common mistake on rebound-only dampers. It feels sharper for one lap and then the car packs down and hops. If you're past ~14 clicks at either end on a 1,050 kg car, you're masking a travel problem, not damping one.</p>
 
-<h2>8. Alignment and the parts that make it possible</h2>
+<h2>9. Alignment and the parts that make it possible</h2>
 <p>The GD3 front has no camber adjustment from the factory and the rear beam has none at all — so the numbers in section 2 need hardware.</p>
 <table>
   <tr><th>Part</th><th>Why</th><th>Link</th></tr>
@@ -175,7 +237,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
   <tr><td>Camber bolts</td><td>Already fitted — confirm they're at max before paying for alignment</td><td>—</td></tr>
 </table>
 
-<h2>9. Springs — the right part numbers for your kit</h2>
+<h2>10. Springs — the right part numbers for your kit</h2>
 <p>Your front and rear springs are <b>different internal diameters</b>, so they cannot be bought as one set of four. Front is 70.5 mm, rear is 62 mm.</p>
 <table>
   <tr><th>End</th><th>Target</th><th>Product</th><th>Price</th></tr>
@@ -186,7 +248,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
 </table>
 <p>If you go to 9 kg rear instead of 8, the same SKU family covers it — search the Just Jap collection for <code>62-180-9kg</code>.</p>
 
-<h2>10. Test day — Winton</h2>
+<h2>11. Test day — Winton</h2>
 <ol>
   <li><b>Baseline session.</b> Pressures 28 cold, dampers 8F/10R, note hot pressures and the highest shaft mark from the zip tie.</li>
   <li><b>Bleed to 32–34 psi hot</b> and re-set. Write it down — that's your starting pressure for every future day at this track in this weather.</li>
@@ -195,7 +257,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
   <li><b>Alignment check</b> after the car has settled on the new springs — expect camber to shift as ride height changes.</li>
 </ol>
 
-<h2>11. Check sheet</h2>
+<h2>12. Check sheet</h2>
 <ul class="check">
   <li>Ride height recorded all four corners (target 275–290 mm)</li>
   <li>Motion ratio measured front and rear</li>
@@ -218,7 +280,7 @@ Complaint to solve: <b>hops through corners, unstable at the limit.</b></p>
     <a href="https://coilovers.com/blogs/guides/bump-stops-lowered-cars">Bump stops on lowered cars</a> ·
     <a href="https://shop.gutentight.racing/blogs/news/coilover-setup-guide-your-coilovers-arent-set-up-right">Coilover setup: travel and preload</a>
   </p>
-  <p>Corner masses and motion ratios are estimates (~1,050 kg, 62/38, MR 0.95 front / 0.70 rear). Measure them and every figure on this page scales with your car. Prepared for Cadell — 23 Nov 2026.</p>
+  <p>Corner masses and motion ratios are estimates (~1,050 kg, 62/38, MR 0.95 front / 0.70 rear). Measure them and every figure on this page scales with your car. Prepared for Cadell — 23 Nov 2026. Updated the same day with the car's current ride height, the cut rear riser and the zero-preload perch settings.</p>
 </footer>
 
 </div>
